@@ -31,7 +31,7 @@ var groupData = [
         { "id": "ES", "joined": "PIB: 1.4% [/]\n Budget: 17.431 milliards $"},
         { "id": "BE", "joined": "PIB: 1.1% [/]\n Budget: 5.461 milliards $"},
         { "id": "NL", "joined": "PIB: 1.8% [/]\n Budget: 1.247 milliards $"},
-        { "id": "DE", "joined": "PIB: 1.4% [/]\n Budget: 12.578 milliards $"},
+        { "id": "DE", "joined": "PIB: 1.4% [/]\n Budget: 52.764 milliards $"},
         { "id": "SE", "joined": "PIB: 1.2% [/]\n Budget: 6.453 milliards $"},
         { "id": "DK", "joined": "PIB: 1.4% [/]\n Budget: 4.953 milliards $"},
       ]

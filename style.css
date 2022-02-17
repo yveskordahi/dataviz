@@ -3,12 +3,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95%;
+    height: auto;
     background-color: rgb(44, 44, 44);
     flex-direction: column;
+    margin-bottom: 100px;
   }
   
 h2 {
+  margin-top: 50px;
     color: rgb(255, 255, 255);
     font-weight: 400;
 }
@@ -17,6 +19,16 @@ h2 {
   width: 80%;
   height: 600px;
   border: 1px solid rgb(223, 223, 223);
+  margin-bottom: 100px;
 }
 
-  
+canvas {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 80vh;
+  width: 80vw;
+}

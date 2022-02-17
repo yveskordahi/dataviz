@@ -1,178 +1,39 @@
- /**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
+var data = {
+  labels: ["Malte", "Chypre", "Luxembourg", "Slovénie", "Estonie", "Lettonie", "Croatie", "Irlande", "Lituanie", "Bulgarie", "Pays-Bas", "Slovaquie", "Hongrie", "Tchéquie", "Autriche", "Finlande", "Portugual", "Danemark", "Grèce", "Belgique", "Roumanie", "Suède", "Pologne", "Espagne", "Italie", "France", "Allemagne"],
+  datasets: [{
+    label: "Dépenses militaire en Milliards",
+    backgroundColor: [
+      'rgba(100,149,217,0.8)'
+    ],
+    borderColor: "rgba(255,255,255)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba( 9, 69, 142 ,0.5)",
+    hoverBorderColor: "rgba( 9, 69, 142 ,1)",
+    data: [0.1, 0.4, 0.5, 0.5, 0.7, 0.8, 1, 1.1, 1.2, 1.3, 1.3, 1.8, 2.4, 3.2, 3.6, 4, 4.6, 4.9, 5.3, 5.5, 5.7, 6.4, 13, 17.4, 28.9, 52.7, 52.8],
+  }]
+};
 
-// Create root element
-// https://www.amcharts.com/docs/v5/getting-started/#Root_element
-var root = am5.Root.new("chartdiv2");
+var options = {
+  maintainAspectRatio: false,
+  scales: {
+    y: {
+      stacked: true,
+      grid: {
+        display: true,
+        color: "rgba(100,149,217,0.3)"
+      }
+    },
+    x: {
+      grid: {
+        display: false,
+        color: "rgba(255,255,255)"
+      }
+    }
+  }
+};
 
-
-// Set themes
-// https://www.amcharts.com/docs/v5/concepts/themes/
-root.setThemes([
-  am5themes_Animated.new(root)
-]);
-
-
-// Create chart
-// https://www.amcharts.com/docs/v5/charts/xy-chart/
-var chart = root.container.children.push(am5xy.XYChart.new(root, {
-  panX: true,
-  panY: true,
-  wheelX: "panX",
-  wheelY: "zoomX"
-}));
-
-// Add cursor
-// https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-cursor.lineY.set("visible", false);
-
-
-// Create axes
-// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
-xRenderer.labels.template.setAll({
-  rotation: -90,
-  centerY: am5.p50,
-  centerX: am5.p100,
-  paddingRight: 15
+new Chart('chart', {
+  type: 'bar',
+  options: options,
+  data: data
 });
-
-var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-  maxDeviation: 0.3,
-  categoryField: "country",
-  renderer: xRenderer,
-  tooltip: am5.Tooltip.new(root, {})
-}));
-
-var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-  maxDeviation: 0.3,
-  renderer: am5xy.AxisRendererY.new(root, {})
-}));
-
-
-// Create series
-// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-  name: "Series 1",
-  xAxis: xAxis,
-  yAxis: yAxis,
-  valueYField: "value",
-  sequencedInterpolation: true,
-  categoryXField: "country",
-  tooltip: am5.Tooltip.new(root, {
-    labelText:"{valueY}"
-  })
-}));
-
-series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5 });
-series.columns.template.adapters.add("fill", (fill, target) => {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
-
-series.columns.template.adapters.add("stroke", (stroke, target) => {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
-
-
-// Set data
-var data = [{
-  country: "USA",
-  value: 2025
-}, {
-  country: "China",
-  value: 1882
-}, {
-  country: "Japan",
-  value: 1809
-}, {
-  country: "Germany",
-  value: 1322
-}, {
-  country: "UK",
-  value: 1122
-}, {
-  country: "France",
-  value: 1114
-}, {
-  country: "India",
-  value: 984
-}, {
-  country: "Spain",
-  value: 711
-}, {
-  country: "Netherlands",
-  value: 665
-}, {
-  country: "Russia",
-  value: 580
-}, {
-  country: "South Korea",
-  value: 443
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-},{
-  country: "Soutrea",
-  value: 503
-}, {
-  country: "Canada",
-  value: 441
-}];
-
-xAxis.data.setAll(data);
-series.data.setAll(data);
-
-
-// Make stuff animate on load
-// https://www.amcharts.com/docs/v5/concepts/animations/
-series.appear(1000);
-chart.appear(1000, 100);
