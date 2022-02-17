@@ -89,7 +89,7 @@ var groupData = [
     dy: -20,
     background: am5.RoundedRectangle.new(root, {
       fill: am5.color(0xffffff),
-      fillOpacity: 0.2
+      fillOpacity: 0.3
     })
   }));
   
@@ -98,7 +98,7 @@ var groupData = [
   
   // Create series for each group
   var colors = am5.ColorSet.new(root, {
-    step: 2
+    step: 1
   });
   colors.next();
   
@@ -143,4 +143,7 @@ var groupData = [
     polygonSeries.data.setAll(group.data);
   
     legend.data.push(polygonSeries);
+
   });
+  /*-----------------------------------------------------------------------------------------------------------------*/
+ 
