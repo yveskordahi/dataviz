@@ -32,3 +32,9 @@ canvas {
   height: 80vh;
   width: 80vw;
 }
+
+a {
+  margin-top: 20px;
+  text-decoration: underline;
+  color: white;
+}
